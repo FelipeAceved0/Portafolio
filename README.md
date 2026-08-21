@@ -4,7 +4,7 @@ Este repositorio contiene el código fuente de mi portafolio web interactivo, di
 
 La plataforma destaca un diseño moderno e interactivo enfocado en rendimiento, fluidez y buenas prácticas de desarrollo web.
 
-🌐 **Sitio Web:** [https://FelipeAceved0.github.io/portafolio](https://FelipeAceved0.github.io/portafolio)
+🌐 **Sitio Web:** [https://FelipeAceved0.github.io/portafolio](https://felipeaceved0.github.io/Portafolio/)
 
 ---
 
