@@ -2,13 +2,14 @@
   "name": "portfolio",
   "private": true,
   "version": "0.0.0",
-  "type": "module",
-  "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "lint": "oxlint",
-    "preview": "vite preview"
+  "type": "module","scripts": {
+  "dev": "vite",
+  "build": "vite build",
+  "predeploy": "npm run build",
+  "deploy": "gh-pages -d dist",
+  "preview": "vite preview"
   },
+  "homepage": "https://FelipeAceved0.github.io/Portafolio",
   "dependencies": {
     "react": "^19.2.8",
     "react-dom": "^19.2.8"
