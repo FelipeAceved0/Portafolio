@@ -1,16 +1,74 @@
-# React + Vite
+# 🚀 Portafolio Profesional de Desarrollo de Software
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Este repositorio contiene el código fuente de mi portafolio web interactivo, diseñado para presentar mi perfil técnico, stack tecnológico y proyectos públicos sincronizados en tiempo real. 
 
-Currently, two official plugins are available:
+La plataforma destaca un diseño moderno e interactivo enfocado en rendimiento, fluidez y buenas prácticas de desarrollo web.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+🌐 **Sitio Web:** [https://FelipeAceved0.github.io/portafolio](https://FelipeAceved0.github.io/portafolio)
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🛠️ Tecnologías y Herramientas Utilizadas
 
-## Expanding the Oxlint configuration
+### **Frontend & Frameworks**
+* **React 18:** Arquitectura basada en componentes reutilizables, hooks (`useState`, `useEffect`, `useRef`) y reactividad en tiempo real.
+* **Vite:** Herramienta de construcción (build tool) ultra rápida para desarrollo moderno con HMR (Hot Module Replacement).
+* **Tailwind CSS:** Framework CSS orientado a clases utilitarias para el diseño responsive, paleta oscura (*dark mode*), gradientes y microinteracciones.
+* **Lucide React:** Colección de iconos vectoriales ligeros e integrados nativamente.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+### **Integraciones & Animaciones**
+* **GitHub REST API:** Peticiones asíncronas (`fetch`) para obtener, filtrar y renderizar de forma automatizada los repositorios públicos del perfil.
+* **Intersection Observer API:** Animaciones de entrada progresiva (*fade-in / slide-up*) que detectan el desplazamiento (*scroll*) del usuario sin sobrecargar el hilo principal.
+* **Parallax Custom (CSS & JS):** Fondo dinámico con esferas de luz reactivas al desplazamiento vertical (`scrollY`).
+
+### **Despliegue & Control de Versiones**
+* **Git & GitHub:** Control de versiones distribuido.
+* **GitHub Pages & `gh-pages`:** Pipeline de automatización para la compilación e integración continua (CI/CD) del sitio estático.
+
+---
+
+## 💻 Características Principales
+
+- ⚡ **Carga Dinámica de Proyectos:** Consume la API de GitHub para mostrar siempre los repositorios más recientes.
+- 🎨 **Interfaz Moderna & UI/UX Cuidada:** Estética oscura profesional con acentos de color, sombras suaves y transiciones continuas.
+- 📱 **Totalmente Responsive:** Adaptado para una navegación fluida en dispositivos móviles, tablets y monitores de escritorio.
+- 🎭 **Efectos Visuales Ligeros:** Parallax sutil y componentes con revelación por scroll.
+
+---
+
+## 🔧 Ejecución en Local
+
+Si deseas clonar y ejecutar este proyecto de manera local, sigue estos pasos:
+
+1. **Clonar el repositorio:**
+   ```bash
+   git clone [https://github.com/FelipeAceved0/portafolio.git](https://github.com/FelipeAceved0/portafolio.git)
+   cd portafolio
+   ```
+
+   ## Instalar dependencias:
+
+### Bash
+```
+npm install
+Iniciar el servidor de desarrollo:
+```
+
+### Bash
+```
+npm run dev
+Compilar para producción:
+```
+### Bash
+```
+npm run build
+```
+
+## 📬 Contacto
+Nombre: Felipe Acevedo
+
+LinkedIn: Felipe Acevedo
+
+GitHub: @FelipeAceved0
+
+Correo: felipeacevedo954@gmail.com
