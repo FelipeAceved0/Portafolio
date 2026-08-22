@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Code2, Database, Terminal, Globe, Mail, ArrowUpRight, CheckCircle2, Layers, Cpu, Server, Workflow, Loader2 } from 'lucide-react';
 
-// Componente para animar elementos al hacer scroll o al entrar en pantalla
+// Componente para animar elementos al hacer scroll
 function FadeInOnScroll({ children, delay = 0 }) {
   const [isVisible, setIsVisible] = useState(false);
   const domRef = useRef();
@@ -87,11 +87,34 @@ export default function App() {
     fetchGitHubRepos();
   }, []);
 
+  // Objeto de habilidades con iconos en CDN de alta calidad
   const skills = {
-    backend: ["C# / .NET Core", "PHP", "Node.js", "Arquitectura REST", "Lógica de Software"],
-    frontend: ["JavaScript (ES6+)", "React", "HTML5 & CSS3", "Tailwind CSS", "AJAX"],
-    database: ["MySQL", "Bases de Datos Relacionales", "Entity Framework Core", "Modelado de Datos"],
-    tools: ["Git / GitHub", "XAMPP", "Postman", "Vite"]
+    backend: [
+      { name: "C# / .NET Core", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dotnetcore/dotnetcore-original.svg" },
+      { name: "PHP", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" },
+      { name: "Node.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" },
+      { name: "Arquitectura REST", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg" },
+      { name: "Lógica de Software", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" }
+    ],
+    frontend: [
+      { name: "JavaScript (ES6+)", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" },
+      { name: "React", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
+      { name: "HTML5 & CSS3", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" },
+      { name: "Tailwind CSS", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" },
+      { name: "AJAX", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jquery/jquery-original.svg" }
+    ],
+    database: [
+      { name: "MySQL", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" },
+      { name: "Bases de Datos Relacionales", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" },
+      { name: "Entity Framework Core", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dotnetcore/dotnetcore-plain.svg" },
+      { name: "Modelado de Datos", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-original.svg" }
+    ],
+    tools: [
+      { name: "Git / GitHub", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" },
+      { name: "XAMPP", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apache/apache-original.svg" },
+      { name: "Postman", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg" },
+      { name: "Vite", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vite/vite-original.svg" }
+    ]
   };
 
   return (
@@ -204,7 +227,7 @@ export default function App() {
             </div>
           </section>
 
-          {/* Stack Técnico */}
+          {/* Stack Técnico con Iconos SVG */}
           <section id="skills" className="space-y-6 border-t border-gray-800/80 pt-16">
             <FadeInOnScroll>
               <h2 className="text-2xl font-bold text-white flex items-center gap-3">
@@ -219,7 +242,12 @@ export default function App() {
                     <Server className="w-4 h-4" /> Backend & Lógica
                   </div>
                   <div className="flex flex-wrap gap-2">
-                    {skills.backend.map(s => <span key={s} className="px-2.5 py-1 text-xs rounded-md bg-gray-800 text-gray-300">{s}</span>)}
+                    {skills.backend.map(s => (
+                      <span key={s.name} className="inline-flex items-center gap-1.5 px-2.5 py-1 text-xs rounded-md bg-gray-800 text-gray-300 border border-gray-700/50">
+                        <img src={s.icon} alt={s.name} className="w-3.5 h-3.5 object-contain" />
+                        {s.name}
+                      </span>
+                    ))}
                   </div>
                 </div>
               </FadeInOnScroll>
@@ -230,7 +258,12 @@ export default function App() {
                     <Globe className="w-4 h-4" /> Frontend
                   </div>
                   <div className="flex flex-wrap gap-2">
-                    {skills.frontend.map(s => <span key={s} className="px-2.5 py-1 text-xs rounded-md bg-gray-800 text-gray-300">{s}</span>)}
+                    {skills.frontend.map(s => (
+                      <span key={s.name} className="inline-flex items-center gap-1.5 px-2.5 py-1 text-xs rounded-md bg-gray-800 text-gray-300 border border-gray-700/50">
+                        <img src={s.icon} alt={s.name} className="w-3.5 h-3.5 object-contain" />
+                        {s.name}
+                      </span>
+                    ))}
                   </div>
                 </div>
               </FadeInOnScroll>
@@ -241,7 +274,12 @@ export default function App() {
                     <Database className="w-4 h-4" /> Bases de Datos
                   </div>
                   <div className="flex flex-wrap gap-2">
-                    {skills.database.map(s => <span key={s} className="px-2.5 py-1 text-xs rounded-md bg-gray-800 text-gray-300">{s}</span>)}
+                    {skills.database.map(s => (
+                      <span key={s.name} className="inline-flex items-center gap-1.5 px-2.5 py-1 text-xs rounded-md bg-gray-800 text-gray-300 border border-gray-700/50">
+                        <img src={s.icon} alt={s.name} className="w-3.5 h-3.5 object-contain" />
+                        {s.name}
+                      </span>
+                    ))}
                   </div>
                 </div>
               </FadeInOnScroll>
@@ -252,7 +290,12 @@ export default function App() {
                     <Workflow className="w-4 h-4" /> Herramientas
                   </div>
                   <div className="flex flex-wrap gap-2">
-                    {skills.tools.map(s => <span key={s} className="px-2.5 py-1 text-xs rounded-md bg-gray-800 text-gray-300">{s}</span>)}
+                    {skills.tools.map(s => (
+                      <span key={s.name} className="inline-flex items-center gap-1.5 px-2.5 py-1 text-xs rounded-md bg-gray-800 text-gray-300 border border-gray-700/50">
+                        <img src={s.icon} alt={s.name} className="w-3.5 h-3.5 object-contain" />
+                        {s.name}
+                      </span>
+                    ))}
                   </div>
                 </div>
               </FadeInOnScroll>
