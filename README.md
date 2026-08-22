@@ -67,7 +67,7 @@ npm run build
 ## 📬 Contacto
 Nombre: Felipe Acevedo
 
-LinkedIn: Felipe Acevedo
+LinkedIn: www.linkedin.com/in/felipe-ariel-acevedo-contreras-948410369
 
 GitHub: @FelipeAceved0
 
