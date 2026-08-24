@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Code2, Database, Terminal, Globe, Mail, ArrowUpRight, CheckCircle2, Layers, Cpu, Server, Workflow, Briefcase } from 'lucide-react';
+import { Code2, Database, Terminal, Globe, Mail, ArrowUpRight, CheckCircle2, Layers, Cpu, Server, Workflow, Briefcase, GraduationCap, Network } from 'lucide-react';
 
 // Icono de GitHub personalizado en SVG
 function GithubIcon({ className = "w-5 h-5" }) {
@@ -184,12 +184,12 @@ export default function App() {
             >
               <Terminal className="text-violet-400 w-4 h-4 transition-transform duration-300 group-hover:rotate-12" /> Felipe Acevedo
             </span>
-            <nav className="flex items-center gap-4 sm:gap-6 text-[10px] sm:text-xs font-bold text-zinc-400 uppercase tracking-wider">
-              <a href="#about" className="hover:text-white transition-colors">Perfil</a>
-              <a href="#experience" className="hover:text-white transition-colors">Experiencia</a>
-              <a href="#skills" className="hover:text-white transition-colors">Tecnologías</a>
+            <nav className="flex items-center gap-3.5 sm:gap-6 text-[10px] sm:text-xs font-bold text-zinc-400 uppercase tracking-wider">
+              <a href="#about" className="hidden md:inline-block hover:text-white transition-colors">Perfil</a>
+              <a href="#experience" className="hidden md:inline-block hover:text-white transition-colors">Experiencia</a>
+              <a href="#skills" className="hidden md:inline-block hover:text-white transition-colors">Tecnologías</a>
               <a href="#projects" className="hover:text-white transition-colors">Proyectos</a>
-              <a href="#contact" className="px-4 py-2 bg-violet-600 text-white font-bold hover:bg-violet-500 transition-all duration-200 border border-violet-500/30 text-[10px] sm:text-xs shadow-md shadow-violet-600/10 uppercase tracking-widest rounded-[2px]">Contacto</a>
+              <a href="#contact" className="px-3 sm:px-4 py-1.5 sm:py-2 bg-violet-600 text-white font-bold hover:bg-violet-500 transition-all duration-200 border border-violet-500/30 text-[10px] sm:text-xs shadow-md shadow-violet-600/10 uppercase tracking-widest rounded-[2px] shrink-0">Contacto</a>
             </nav>
           </div>
         </header>
@@ -320,12 +320,28 @@ export default function App() {
                 <div className="p-6 rounded-xl bg-zinc-900/30 border border-zinc-800 space-y-5 transition-all duration-300 hover:-translate-y-1.5 hover:scale-[1.02] hover:border-violet-500/30 hover:shadow-xl hover:shadow-white/5">
                   <div>
                     <h3 className="font-bold text-white text-base mb-3">Educación & Ubicación</h3>
-                    <ul className="space-y-2 text-sm text-zinc-400">
-                      <li>🎓 <strong>Ing. en Ejecución en Informática</strong></li>
-                      <li className="text-xs text-zinc-500 -mt-1.5">Inst. Profesional AIEP (Egresado 2025)</li>
-                      <li className="pt-2">🔌 <strong>Técnico en Conectividad y Redes</strong></li>
-                      <li className="text-xs text-zinc-500 -mt-1.5">Liceo Diego Portales, Rancagua</li>
-                      <li className="pt-2">📍 Rancagua, O'Higgins, Chile</li>
+                    <ul className="space-y-3.5 text-sm text-zinc-400">
+                      <li className="flex items-start gap-2.5">
+                        <GraduationCap className="w-5 h-5 text-violet-400 shrink-0 mt-0.5" />
+                        <div>
+                          <strong>Ing. en Ejecución en Informática</strong>
+                          <div className="text-xs text-zinc-500 mt-0.5">Inst. Profesional AIEP (Egresado 2025)</div>
+                        </div>
+                      </li>
+                      <li className="flex items-start gap-2.5 pt-1">
+                        <Network className="w-5 h-5 text-violet-400 shrink-0 mt-0.5" />
+                        <div>
+                          <strong>Técnico en Conectividad y Redes</strong>
+                          <div className="text-xs text-zinc-500 mt-0.5">Liceo Diego Portales, Rancagua</div>
+                        </div>
+                      </li>
+                      <li className="flex items-center gap-2.5 pt-1">
+                        <div className="location-pin-container shrink-0">
+                          <div className="pin-shadow" />
+                          <div className="pin-drop" />
+                        </div>
+                        <strong>Rancagua, O'Higgins, Chile</strong>
+                      </li>
                     </ul>
                   </div>
                   <div className="border-t border-zinc-800 pt-4">

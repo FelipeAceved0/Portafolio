@@ -48,3 +48,49 @@ html {
 .animate-marquee:hover {
   animation-play-state: paused;
 }
+
+/* Pin de ubicación animado (Estilo Uiverse) */
+.location-pin-container {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  vertical-align: middle;
+}
+
+.pin-drop {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: #8b5cf6; /* violet-500 */
+  border-radius: 100% 100% 100% 0;
+  box-shadow: 0px 0px 0px 1.5px #c084fc; /* violet-400 border */
+  animation: anm-SL-3-move 1s linear infinite;
+  top: 3px;
+  left: 7px;
+  transform: rotate(-45deg);
+}
+
+.pin-shadow {
+  position: absolute;
+  width: 14px;
+  height: 6px;
+  border-radius: 100%;
+  background-color: rgba(139, 92, 246, 0.25);
+  bottom: 3px;
+  left: 5px;
+}
+
+@keyframes anm-SL-3-move {
+  0% {
+    top: 3px;
+  }
+  50% {
+    top: -1px;
+  }
+  100% {
+    top: 3px;
+  }
+}
