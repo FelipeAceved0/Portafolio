@@ -233,7 +233,7 @@ export default function App() {
                     Ver Proyectos
                   </a>
                   <a 
-                    href="/CV_Felipe_Acevedo_Contreras.pdf" 
+                    href="./CV_Felipe_Acevedo_Contreras.pdf" 
                     download="CV_Felipe_Acevedo_Contreras.pdf" 
                     className="px-6 py-3 bg-transparent hover:bg-zinc-900/50 text-zinc-350 hover:text-white font-medium border border-zinc-800 hover:border-zinc-700 transition-all duration-300 hover:scale-105 flex items-center gap-2 text-sm rounded-[2px]"
                   >
