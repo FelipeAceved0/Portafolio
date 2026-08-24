@@ -1,9 +1,20 @@
 @import "tailwindcss";
 
+@theme {
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-display: 'Plus Jakarta Sans', system-ui, sans-serif;
+}
+
 @layer base {
   body {
-    background-color: #0d1117;
-    color: #e6edf3;
+    background-color: #0a0a0c; /* Deep graphite black */
+    color: #f4f4f5; /* Zinc 100 base */
+    font-family: var(--font-sans);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    letter-spacing: -0.02em;
   }
 }
 
@@ -11,12 +22,29 @@ html {
   scroll-behavior: smooth;
 }
 
-@keyframes floatBg {
-  0% { transform: translateY(0px) scale(1); }
-  50% { transform: translateY(-20px) scale(1.05); }
-  100% { transform: translateY(0px) scale(1); }
+/* Patrón de grilla de ingeniería prémium */
+.bg-grid-pattern {
+  background-size: 36px 36px;
+  background-image: 
+    linear-gradient(to right, rgba(63, 63, 70, 0.07) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(63, 63, 70, 0.07) 1px, transparent 1px);
 }
 
-.animate-parallax-bg {
-  animation: floatBg 18s ease-in-out infinite;
+/* Efecto de desvanecimiento radial para la grilla */
+.bg-radial-fade {
+  background: radial-gradient(circle 900px at 50% 300px, transparent 20%, #0a0a0c 90%);
+}
+
+/* Animación de Carrusel Infinito (Marquee) */
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  animation: marquee 25s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
 }
