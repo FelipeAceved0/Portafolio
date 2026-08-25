@@ -56,18 +56,45 @@ function FadeInOnScroll({ children, delay = 0 }) {
   );
 }
 
-export default function App() {
+// Componente de Fondo Optimizado para evitar re-renderizados innecesarios del App principal al hacer scroll
+function BackgroundGlow() {
   const [scrollY, setScrollY] = useState(0);
 
-  // Parallax de iluminación sutil de fondo
   useEffect(() => {
+    let ticking = false;
     const handleScroll = () => {
-      setScrollY(window.scrollY);
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          setScrollY(window.scrollY);
+          ticking = false;
+        });
+        ticking = true;
+      }
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  return (
+    <div className="fixed inset-0 pointer-events-none z-0">
+      <div className="absolute inset-0 bg-grid-pattern opacity-50" />
+      <div className="absolute inset-0 bg-radial-fade" />
+      
+      {/* Reflejos de iluminación púrpura sutil de fondo */}
+      <div 
+        className="absolute top-1/4 left-1/4 w-[40rem] h-[40rem] bg-purple-900/5 rounded-full blur-[140px] transition-transform duration-100 ease-out"
+        style={{ transform: `translateY(${scrollY * 0.08}px)` }}
+      />
+      <div 
+        className="absolute top-2/3 right-1/4 w-[35rem] h-[35rem] bg-violet-800/5 rounded-full blur-[120px] transition-transform duration-100 ease-out"
+        style={{ transform: `translateY(${-scrollY * 0.06}px)` }}
+      />
+    </div>
+  );
+}
+
+export default function App() {
 
   // Lista estática de proyectos destacados
   const projects = [
@@ -156,21 +183,8 @@ export default function App() {
   return (
     <div className="relative min-h-screen bg-[#0a0a0c] text-zinc-100 font-sans selection:bg-purple-600 selection:text-white overflow-x-hidden">
       
-      {/* Fondo de Grilla e Iluminaciones Radiales */}
-      <div className="fixed inset-0 pointer-events-none z-0">
-        <div className="absolute inset-0 bg-grid-pattern opacity-50" />
-        <div className="absolute inset-0 bg-radial-fade" />
-        
-        {/* Reflejos de iluminación púrpura sutil de fondo */}
-        <div 
-          className="absolute top-1/4 left-1/4 w-[40rem] h-[40rem] bg-purple-900/5 rounded-full blur-[140px] transition-transform duration-100 ease-out"
-          style={{ transform: `translateY(${scrollY * 0.08}px)` }}
-        />
-        <div 
-          className="absolute top-2/3 right-1/4 w-[35rem] h-[35rem] bg-violet-800/5 rounded-full blur-[120px] transition-transform duration-100 ease-out"
-          style={{ transform: `translateY(${-scrollY * 0.06}px)` }}
-        />
-      </div>
+      {/* Fondo de Grilla e Iluminaciones Radiales (Aislado y Optimizado) */}
+      <BackgroundGlow />
 
       {/* Capa principal */}
       <div className="relative z-10">
@@ -419,6 +433,8 @@ export default function App() {
                         <img 
                           src={logo.icon} 
                           alt={logo.name} 
+                          loading="lazy"
+                          decoding="async"
                           className="w-7 h-7 object-contain filter grayscale opacity-50 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300" 
                         />
                         <span className="text-sm font-semibold text-zinc-500 group-hover:text-zinc-300 transition-colors">{logo.name}</span>
@@ -432,6 +448,8 @@ export default function App() {
                         <img 
                           src={logo.icon} 
                           alt={logo.name} 
+                          loading="lazy"
+                          decoding="async"
                           className="w-7 h-7 object-contain filter grayscale opacity-50 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300" 
                         />
                         <span className="text-sm font-semibold text-zinc-500 group-hover:text-zinc-300 transition-colors">{logo.name}</span>
@@ -451,7 +469,7 @@ export default function App() {
                   <div className="flex flex-wrap gap-2 pt-1">
                     {skills.backend.map(s => (
                       <span key={s.name} className="inline-flex items-center gap-1.5 px-2.5 py-1 text-xs rounded-md bg-zinc-950 text-zinc-300 border border-zinc-800/60 group">
-                        <img src={s.icon} alt={s.name} className="w-3.5 h-3.5 object-contain filter grayscale opacity-75 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300" />
+                        <img src={s.icon} alt={s.name} loading="lazy" decoding="async" className="w-3.5 h-3.5 object-contain filter grayscale opacity-75 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300" />
                         {s.name}
                       </span>
                     ))}
@@ -467,7 +485,7 @@ export default function App() {
                   <div className="flex flex-wrap gap-2 pt-1">
                     {skills.frontend.map(s => (
                       <span key={s.name} className="inline-flex items-center gap-1.5 px-2.5 py-1 text-xs rounded-md bg-zinc-950 text-zinc-300 border border-zinc-800/60 group">
-                        <img src={s.icon} alt={s.name} className="w-3.5 h-3.5 object-contain filter grayscale opacity-75 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300" />
+                        <img src={s.icon} alt={s.name} loading="lazy" decoding="async" className="w-3.5 h-3.5 object-contain filter grayscale opacity-75 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300" />
                         {s.name}
                       </span>
                     ))}
@@ -483,7 +501,7 @@ export default function App() {
                   <div className="flex flex-wrap gap-2 pt-1">
                     {skills.database.map(s => (
                       <span key={s.name} className="inline-flex items-center gap-1.5 px-2.5 py-1 text-xs rounded-md bg-zinc-950 text-zinc-300 border border-zinc-800/60 group">
-                        <img src={s.icon} alt={s.name} className="w-3.5 h-3.5 object-contain filter grayscale opacity-75 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300" />
+                        <img src={s.icon} alt={s.name} loading="lazy" decoding="async" className="w-3.5 h-3.5 object-contain filter grayscale opacity-75 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300" />
                         {s.name}
                       </span>
                     ))}
@@ -499,7 +517,7 @@ export default function App() {
                   <div className="flex flex-wrap gap-2 pt-1">
                     {skills.tools.map(s => (
                       <span key={s.name} className="inline-flex items-center gap-1.5 px-2.5 py-1 text-xs rounded-md bg-zinc-950 text-zinc-300 border border-zinc-800/60 group">
-                        <img src={s.icon} alt={s.name} className="w-3.5 h-3.5 object-contain filter grayscale opacity-75 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300" />
+                        <img src={s.icon} alt={s.name} loading="lazy" decoding="async" className="w-3.5 h-3.5 object-contain filter grayscale opacity-75 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300" />
                         {s.name}
                       </span>
                     ))}
