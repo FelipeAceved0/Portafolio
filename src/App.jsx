@@ -130,6 +130,15 @@ export default function App() {
       github: "https://github.com/FelipeAceved0/Pyme-Ecommerce",
       demo: "https://pyme-ecommerce.onrender.com",
       badge: "E-commerce & SQL"
+    },
+    {
+      id: "chatconia",
+      title: "ChatconIA",
+      description: "Sistema de mensajería instantánea con traducción en tiempo real usando Inteligencia Artificial (Google Gemini). Cuenta con chat global, chats privados y un Asistente IA integrado.",
+      tags: ["React", "Node.js", "Socket.io", "Gemini API", "Render"],
+      github: "https://github.com/FelipeAceved0/ChatconIA",
+      demo: "https://chatconia.onrender.com",
+      badge: "IA & Tiempo Real"
     }
   ];
 
