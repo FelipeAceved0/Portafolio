@@ -99,6 +99,15 @@ export default function App() {
   // Lista estática de proyectos destacados
   const projects = [
     {
+      id: "practica-manejo",
+      title: "Práctica Prueba de Conducir",
+      description: "Simulador web interactivo para preparar el examen teórico de conducir en Chile (2026). Las preguntas fueron generadas con Inteligencia Artificial utilizando contexto directo del Libro del Nuevo Conductor de Conaset.",
+      tags: ["React 19", "TypeScript", "Tailwind CSS v4", "Vite", "Render"],
+      github: "https://github.com/FelipeAceved0/Web-PracticaPruebaDeManejo",
+      demo: "https://web-practicapruebademanejo.onrender.com/#home",
+      badge: "Educación & IA"
+    },
+    {
       id: "rbac-audit",
       title: "RbacAuditSystem",
       description: "Sistema empresarial de Control de Acceso Basado en Roles (RBAC) y Auditoría Automática a nivel de base de datos. Intercepta el ciclo de vida de EF Core en .NET 10 para registrar de forma transparente y segura los cambios de datos (valores nuevos/anteriores, usuario, IP, fecha). Incluye documentación de API interactiva con Scalar.",
@@ -144,6 +153,7 @@ export default function App() {
 
   // Logos del Carrusel Infinito
   const marqueeLogos = [
+    { name: "TypeScript", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" },
     { name: "C#", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" },
     { name: "React", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
     { name: "Node.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" },
@@ -169,6 +179,7 @@ export default function App() {
       { name: "Entity Framework Core", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dotnetcore/dotnetcore-plain.svg" }
     ],
     frontend: [
+      { name: "TypeScript", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" },
       { name: "JavaScript (ES6+)", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" },
       { name: "React", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
       { name: "HTML5 & CSS3", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" },
